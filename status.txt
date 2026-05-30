@@ -1,1 +1,1 @@
-True
+powershell -Command "$edgePath=(Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\msedge.exe' -ErrorAction SilentlyContinue).'(Default)'; if(-not $edgePath){$edgePath='msedge.exe'}; $urls=1..10|%{'https://www.google.com/search?q=hello'}; Start-Process -FilePath $edgePath -ArgumentList $urls"
